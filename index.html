@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dairy Queen</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <!-- google material icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+
+  <!-- swiper slider -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <script defer src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+  <!-- lodash : 스크롤을 제어할 수 있는 라이브러리 -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- gsap : 자바스크립트 애니메이션 -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- scrollMagic : 스크롤에 따라 해당 영역 감지 -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+  <!-- topButton : scrollToPlugin -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js" integrity="sha512-agNfXmEo6F+qcj3WGryaRvl9X9wLMQORbTt5ACS9YVqzKDMzhRxY+xjgO45HCLm61OwHWR1Oblp4QSw/SGh9SA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script defer src="./js/index.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <h1><a href="/"><img src="./img/dq_logo.png" alt="DQ logo"></a></h1>
+      <nav class="gnb-pc">
+        <ul class="main01-pc">
+          <li><a href="#">MENU</a></li>
+          <li><a href="#">LOCATIONS</a></li>
+          <li><a href="#">FRANCHISE</a></li>
+          <li><a href="#">ABOUT</a></li>
+        </ul>
+        <ul class="main02-pc">
+          <li><a href="#">SIGN IN</a></li>
+          <li><a href="#">JOIN US</a></li>
+        </ul>
+      </nav>
+      <input type="button" value="START ORDER" id="order-btn-pc">
+    </div>
+  </header>
+
+  <!-- Tab, Mobile nav -->
+  <nav class="gnb-t-m">
+    <div class="user-icon">
+      <a href="#"><img src="./img/user_icon.png" alt="user icon"></a>
+    </div>
+    <div class="gnb-menu">
+      <div class="main"><a href="#">MENU</a></div>
+      <ul class="sub">
+        <li><a href="#">FEATURED</a></li>
+        <li><a href="#">TREATS</a></li>
+        <li><a href="#">FOOD</a></li>
+        <li><a href="#">DRINKS</a></li>
+        <li><a href="#">KIDS</a></li>
+        <li><a href="#">DQ CAKES</a></li>
+      </ul>
+      <div class="main"><a href="#">LOCATION</a></div>
+      <div class="main"><a href="#">FRANCHISE</a></div>
+      <div class="main"><a href="#">ABOUT</a></div>
+      <ul class="sub">
+        <li><a href="#">ABOUT DQ</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </div>
+    <div class="sign">
+      <input type="button" value="SIGN IN/SIGN UP" id="sign-btn">
+    </div>
+    <div class="social-media">
+      <a href="#"><img src="./img/facebook_icon.png" alt="facebook icon"></a>
+      <a href="#"><img src="./img/twitter_icon.png" alt="twitter icon"></a>
+      <a href="#"><img src="./img/instgram_icon.png" alt="instagram icon"></a>
+    </div>
+  </nav>
+
+  <!-- Tab, Mobile 햄버거 버튼 -->
+  <div class="menu-toggle-btn">
+    <div id="one" class="toggle"></div>
+    <div id="two" class="toggle"></div>
+    <div id="three" class="toggle"></div>
+  </div>
+
+  <!-- Order 버튼 -->
+  <input type="button" value="ORDER" id="order-btn-t-m">
+
+  <!-- Section 01 : video -->
+  <section class="youtube">
+    <h2 class="hidden">Youtube</h2>
+		<div class="dq_video">
+			<video autoplay loop muted playsinline preload="auto" width="100%">
+				<source src="./img/dq_vid.mp4" type="video/mp4">
+			</video>
+		</div>
+  </section>
+
+  <!-- Section 02 : What's new -->
+  <section class="whats-new scroll-spy">
+    <h2 class="back-to-position to-bottom delay-0">WHAT'S NEW</h2>
+    <div class="new-wrap">
+      <div class="new new01 back-to-position to-bottom delay-1">
+        <h3 class>Summertime Sunset<br>Twisty Misty® Slush</h3>
+        <div class="new-img"><img src="./img/whats_new_slushy.png" alt="Summertime Sunset Twisty Misty® Slush"></div>
+        <button class="new-btn new-btn01">SEE DETAIL</button>
+      </div>
+      <div class="new new02 back-to-position to-bottom delay-4">
+        <h3 class>Backyard Bacon Ranch<br>Signature Stackburgers</h3>
+        <div class="new-img"><img src="./img/whats_new_stackburgers.png" alt="Backyard Bacon Ranch Signature Stackburgers"></div>
+        <button class="new-btn new-btn02">SEE DETAIL</button>
+      </div>
+      <div class="new new03 back-to-position to-bottom delay-7">
+        <h3>Frozen Hot Chocolate</h3>
+        <div class="new-img"><img src="./img/whats_new_frozen.png" alt="Frozen Hot Chocolate"></div>
+        <button class="new-btn new-btn03">SEE DETAIL</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 03 : Order now -->
+  <section class="order-now scroll-spy">
+    <div class="order-oreo"><img src="./img/treats_oreo.png" alt="oreo" class="floating1"></div>
+    <div class="order-cotton"><img src="./img/treats_cottoncandy.png" alt="cotton candy"  class="floating2"></div>
+    <div class="order-mm"><img src="./img/treats_mm.png" alt="m&m" class="floating3"></div>
+    <div class="order-now-wrap">
+      <h2 class="back-to-position to-bottom delay-0">DQ Blizzard Treats</h2>
+      <div class="back-to-position to-bottom delay-1"><input type="button" value="ORDER NOW" id="order-now-btn"></div>
+    </div>
+  </section>
+
+  <!-- Section 04 : See more menu -->
+  <section class="see-more-menu">
+    <h2 class="hidden">BEST ITEM</h2>
+    <div class="see-more-menu-img">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="#"><img src="img/menu_butterfinger.png" alt="butterfinger"></a>
+            <p>Butterfinger®<br>Blizzard ® Treat</p>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="img/menu_choco-brownie.png" alt="choco brownie"></a>
+            <p>Choco Brownie Extreme<br>Blizzard® Treat</p>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="img/menu_cookie-dough.png" alt="cookie dough"></a>
+            <p>Chocolate Chip Cookie Dough<br>Blizzard ® Treat</p>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="img/menu_cottoncandy.png" alt="cottoncandy"></a>
+            <p>Cotton Candy<br>Blizzard® Treat</p>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="img/menu_heath.png" alt="heath"></a>
+            <p>Heath®<br>Blizzard® Treat</p>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="img/menu_oreo-cookie.png" alt="oreo cookie"></a>
+            <p>Oreo® Cookie<br>Blizzard® Treat</p>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="img/menu_oreo.png" alt="oreo"></a>
+            <p>OREO® Brookie<br>Blizzard® Treat</p>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="img/menu_peanut.png" alt="peanut"></a>
+            <p>Peanut Butter Puppy Chow<br>Blizzard® Treat</p>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="img/menu_mm.png" alt="m&m"></a>
+            <p>M&M's® Milk Chocolate Candies<br>Blizzard® Treat</p>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="img/menu_reeses.png" alt="resses"></a>
+            <p>Reese's® Peanut Butter Cup<br>Blizzard® Treat</p>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="img/menu_smores.png" alt="smores"></a>
+            <p>S'mores<br>Blizzard® Treat</p>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="img/menu_snickers.png" alt="snickers"></a>
+            <p>Snickers®<br>Blizzard® Treat</p>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="img/menu_strawberry.png" alt="strawberry"></a>
+            <p>Choco-Dipped Strawberry<br>Blizzard® Treat</p>
+          </div>
+          <div class="swiper-slide">
+            <a href="#"><img src="img/menu_turtle-pecan.png" alt="turtle pecan"></a>
+            <p>Turtle Pecan Cluster<br>Blizzard ® Treat</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-prev">
+        <div class="material-symbols-rounded">arrow_back_ios_new</div>
+      </div>
+      <div class="swiper-next">
+        <div class="material-symbols-rounded">arrow_forward_ios</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section 05 : Find a location -->
+  <section class="location scroll-spy">
+    <div class="location-logo back-to-position to-bottom delay-0">
+      <img src="img/dq_logo_location.png" alt="DQ logo">
+    </div>
+    <div class="location-text">
+      <h3 class="back-to-position to-bottom delay-1">FIND A LOCATION</h3>
+      <p class="back-to-position to-bottom delay-2">By the end of 2014, Dairy Queen had more than 6,400 stores in 27 countries,<br> including more than 1,400 outside the United States and Canada.</p>
+      <input type="text" id="enter" placeholder="Enter city or zip" p class="back-to-position to-bottom delay-3" onfocus="this.placeholder=''" onblur="this.placeholder='Enter city or zip'">
+      <!-- <img src="./img/search_icon.png" alt="search icon" class="search-icon"></img> -->
+    </div>
+  </section>
+
+  <!-- Section 06 : The dq feed -->
+  <section class="feed scroll-spy">
+    <div class="feed-title">
+      <h2 class="back-to-position to-bottom delay-0">THE DQ FEED</h2>
+      <div class="social-wrap back-to-position to-bottom delay-1">
+        <a href="#"><img src="./img/facebook_icon.png" alt="facebook"></a>
+        <a href="#"><img src="./img/twitter_icon.png" alt="twitter"></a>
+        <a href="#"><img src="./img/instgram_icon.png" alt="instagram"></a>
+      </div>
+    </div>
+    <div class="feed-img back-to-position to-bottom delay-2">
+      <div>
+        <a href="#"><img src="img/feed01.png" alt="Sweet summertime cotton candy blizzard treat"></a>
+      </div>
+      <div><a href="#"><img src="img/feed02.png" alt="Bogo lonie"></a></div>
+      <div><a href="#"><img src="img/feed03.png" alt="Backyard is a state of mind"></a></div>
+      <div><a href="#"><img src="img/feed04.png" alt="Happy holidays from dq"></a></div>
+      <div><a href="#"><img src="img/feed05.png" alt="Dont sleep on the sauce"></a></div>
+      <div><a href="#"><img src="img/feed06.png" alt="Happy fathers day"></a></div>
+      <div><a href="#"><img src="img/feed07.png" alt="Hot couture"></a></div>
+      <div><a href="#"><img src="img/feed08.png" alt="Churro dipped cone"></a> </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div><img src="./img/dq_logo.png" alt="DQ logo"></div>
+    <address>
+      PRIVACY STATEMENT | TERMS AND CONDITIONS | ACCESSIBILITY STATEMENT | SITEMAP <br> TM & © 2023 Am. D.Q. Corp.
+    </address>
+  </footer>
+
+  <!-- To-top Button -->
+  <div id="to-top">
+    <span class="material-symbols-rounded">arrow_upward</span>
+  </div>
+</body>
+</html>
